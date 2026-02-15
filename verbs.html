@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Important Verbs | GrammarFlow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="resources/CSS/verb.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+
+    <button class="back-btn" onclick="history.back()" aria-label="Go Back">
+        <i data-lucide="arrow-left"></i>
+    </button>
+
+    <div class="logo">
+        <i data-lucide="book-open"></i>
+        <span>GrammarFlow</span>
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+
+    <div class="hero-header">
+        <h1>Important Verbs</h1>
+        <p>V1, V2, V3 with Hindi Meaning</p>
+    </div>
+
+    <!-- ================= CONTROLS ================= -->
+    <div class="controls">
+
+        <!-- Search -->
+        <div class="search-box">
+            <i data-lucide="search" class="input-icon"></i>
+            <input 
+                type="text"
+                id="searchInput"
+                placeholder="Search verb (e.g. go, eat)"
+                autocomplete="off"
+            >
+        </div>
+
+        <!-- Filter -->
+        <div class="filter-container">
+
+            <button class="filter-btn" id="filterBtn" type="button">
+                <i data-lucide="filter"></i>
+                Category
+            </button>
+
+            <div class="filter-menu" id="filterMenu">
+
+                <div class="filter-item" data-value="">All</div>
+                <div class="filter-item" data-value="regular">Regular</div>
+                <div class="filter-item" data-value="irregular">Irregular</div>
+                <div class="filter-item" data-value="daily">Daily</div>
+                <div class="filter-item" data-value="basic">Basic</div>
+                <div class="filter-item" data-value="work">Work</div>
+                <div class="filter-item" data-value="advanced">Advanced</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= VERB TABLE ================= -->
+<section class="verb-section">
+
+    <div class="table-container">
+
+        <table class="verb-table">
+            <thead>
+                <tr>
+                   <th scope="col">#</th>
+                    <th scope="col">V1</th>
+                    <th scope="col">V2</th>
+                    <th scope="col">V3</th>
+                    <th scope="col">Meaning</th>
+                </tr>
+            </thead>
+
+            <tbody id="verbTableBody">
+                <!-- JS Data Render Here -->
+            </tbody>
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SCRIPT ================= -->
+<script type="module" src="vendors/js/verbsApp.js"></script>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>

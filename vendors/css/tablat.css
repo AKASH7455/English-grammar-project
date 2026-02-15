@@ -1,0 +1,219 @@
+/* =========================
+   TABLET (768px+)
+========================= */
+@media (min-width: 768px) {
+
+  /* NAVBAR */
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  /* HERO */
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  /* LEVEL SECTION */
+  .level-section {
+    padding: 32px;
+  }
+
+ .level-row {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* content ko priority */
+    align-items: center;
+    gap: 16px; /* gap kam */
+  }
+
+  .level-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .level-image img {
+    max-width: 140px;
+  }
+
+}
+
+
+
+
+/* =========================
+   LAPTOP / DESKTOP (1024px+)
+========================= */
+@media (min-width: 1024px) {
+
+  /* NAVBAR */
+  .nav-container {
+    padding: 16px 32px;
+  }
+
+  .nav-links {
+    gap: 28px;
+  }
+
+  /* HERO */
+  .hero-section {
+    padding: 6rem 2rem;
+  }
+
+  .hero-title {
+    font-size: 3.2rem;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+  }
+
+  .hero-actions {
+    gap: 1.2rem;
+  }
+
+  /* LEVEL SECTION */
+  .level-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+
+ .level-row {
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 20px;
+  }
+ 
+
+
+  
+  .level-image {
+    display: flex;
+    justify-content: flex-start; /* image card ke paas aaye */
+  }
+    .level-image-2 {
+    display: flex;
+    justify-content: flex-start; /* image card ke paas aaye */
+  }
+
+  .level-image img {
+    max-width: 160px;
+  }
+
+}
+
+  .level-card {
+    padding: 24px;
+  }
+
+  .level-card h3 {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .level-card li {
+    font-size: 14px;
+  }
+
+  /* FOOTER */
+  .footer-text {
+    font-size: 14px;
+  }
+
+
+/* ===============================
+   TABLET VIEW
+================================ */
+@media (min-width: 768px) {
+
+  .container {
+    padding: 24px;
+    max-width: 720px;
+    margin: auto;
+  }
+
+  .course-info h1 {
+    font-size: 26px;
+  }
+
+  .course-info p {
+    font-size: 15px;
+  }
+
+  .topics {
+    gap: 20px;
+  }
+
+  .topic-card {
+    padding: 20px;
+  }
+
+  .content h3 {
+    font-size: 17px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  .topic-actions button {
+    font-size: 13px;
+    padding: 12px;
+  }
+}
+
+
+/* ===============================
+   LAPTOP VIEW
+================================ */
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 32px;
+  }
+
+  .topics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .topic-card {
+    padding: 24px;
+  }
+
+  .course-info h1 {
+    font-size: 28px;
+  }
+
+  .course-info p {
+    font-size: 16px;
+  }
+
+  .content h3 {
+    font-size: 18px;
+  }
+
+  .topic-actions button {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+}
+

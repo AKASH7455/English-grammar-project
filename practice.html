@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VerbTrack – Practice</title>
+  <link rel="stylesheet" href="resources/css/practice.css"/>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="top-bar">
+
+    <button class="back-btn" data-action="back" aria-label="Go Back">
+      <i data-lucide="arrow-left"></i>
+    </button>
+
+    <div class="logo">
+      <i data-lucide="book-open"></i>
+      <span>VerbTrack</span>
+    </div>
+
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+  <main class="container">
+
+    <h1 class="topic-title" id="topicTitle">Loading...</h1>
+
+
+    <!-- ================= PROGRESS ================= -->
+    <section class="progress-section">
+
+      <div class="progress-box">
+        <p class="progress-text">
+          <i data-lucide="trending-up"></i>
+          Progress: <span id="progressPercent">0%</span>
+        </p>
+
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <div class="score-board">
+
+        <div class="score-group">
+          <span>MCQ</span>
+          <span><i data-lucide="check-circle"></i> <strong id="mcqCorrect">0</strong></span>
+          <span><i data-lucide="x-circle"></i> <strong id="mcqWrong">0</strong></span>
+        </div>
+
+        <div class="score-group">
+          <span>Fill</span>
+          <span><i data-lucide="check-circle"></i> <strong id="fillCorrect">0</strong></span>
+          <span><i data-lucide="x-circle"></i> <strong id="fillWrong">0</strong></span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= TABS ================= -->
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="notes">Notes</button>
+      <button class="tab-btn" data-tab="mcq">MCQ</button>
+      <button class="tab-btn" data-tab="fill">Fill</button>
+      <button class="tab-btn locked" data-tab="ai">
+        <i data-lucide="lock"></i> AI Help
+      </button>
+    </nav>
+
+
+    <!-- ================= CONTENT ================= -->
+    <section class="content-wrapper">
+
+      <!-- ================= NOTES ================= -->
+      <div class="tab-content active" id="notesTab">
+
+        <div class="notes-section">
+
+          <div class="notes-block">
+            <h3>Concept</h3>
+            <ul id="notesList"></ul>
+          </div>
+
+          <div class="notes-block">
+            <h3>Rules</h3>
+            <ul id="rulesList"></ul>
+          </div>
+
+          <div class="notes-block">
+            <h3>Examples</h3>
+            <ul id="examplesList"></ul>
+          </div>
+
+          <div class="notes-footer">
+            <div class="notes-progress">
+              Notes: <span id="notesProgressText">0%</span>
+              <div class="progress-bar small">
+                <div class="progress-fill" id="notesProgressFill"></div>
+              </div>
+            </div>
+
+            <button class="complete-btn" id="markNotesBtn">
+              <i data-lucide="check"></i>
+              Mark Complete
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ================= MCQ ================= -->
+      <div class="tab-content" id="mcqTab">
+
+        <div class="question-card">
+
+          <span class="question-num" id="mcqQuestionNum"></span>
+
+          <h3 class="question-text" id="mcqQuestionText"></h3>
+
+          <div class="options-container" id="mcqOptions"></div>
+
+          <!-- Explanation Box -->
+          <div class="explanation-box" id="mcqExplanation" style="display:none;"></div>
+
+          <!-- Next Button -->
+          <button class="next-btn" id="mcqNextBtn" style="display:none;">
+            <i data-lucide="arrow-right"></i>
+            Next Question
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= FILL ================= -->
+      <div class="tab-content" id="fillTab">
+
+        <div class="question-card">
+
+          <span class="question-num" id="fillQuestionNum"></span>
+
+          <h3 class="question-text" id="fillQuestionText"></h3>
+
+          <div class="fill-hint" id="fillOptionsList"></div>
+
+          <div class="fill-container" id="fillContainer"></div>
+
+          <!-- Explanation -->
+          <div class="explanation-box" id="fillExplanation" style="display:none;"></div>
+
+          <button class="next-btn" id="fillNextBtn" style="display:none;">
+            <i data-lucide="arrow-right"></i>
+            Next Question
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= AI ================= -->
+      <div class="tab-content" id="aiTab">
+        <div class="ai-placeholder">
+          <i data-lucide="sparkles"></i>
+          <h2>Premium AI Help</h2>
+          <p>Unlock advanced grammar explanations.</p>
+          <button class="complete-btn">
+            Upgrade to Pro
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= TOAST ================= -->
+ <div id="toast" class="toast"></div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="vendors/js/data.js"></script>
+  <script src="vendors/js/app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

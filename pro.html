@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Get Pro | GrammarFlow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #F3F5F7;
+}
+
+/* HEADER */
+.header {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+.back-btn {
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #0F766E;
+    font-weight: 600;
+}
+
+/* PLANS */
+.plans-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.plan-card {
+    width: 300px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.plan-card h2 {
+    margin-top: 0;
+}
+
+.price {
+    font-size: 28px;
+    margin: 12px 0;
+    color: #4B5563;
+}
+
+.price span {
+    font-size: 14px;
+}
+
+.highlight {
+    color: #0F766E;
+    font-size: 32px;
+}
+
+.plan-card ul {
+    padding-left: 18px;
+    line-height: 1.8;
+    font-size: 14px;
+    color: #4B5563;
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: #0F766E;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.btn-primary,
+.btn-outline {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 999px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    border: none;
+    background: #0F766E;
+    color: white;
+}
+
+.btn-outline {
+    border: 1px solid #0F766E;
+    background: white;
+    color: #0F766E;
+}
+
+.pro {
+    border: 2px solid #0F766E;
+    box-shadow: 0 10px 25px rgba(15,118,110,0.15);
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <button id="backBtn" class="back-btn">← Back</button>
+    <h1>Choose Your Plan</h1>
+    <p>Start free or unlock complete mastery with Pro.</p>
+</header>
+
+<section class="plans-wrapper">
+
+    <!-- FREE PLAN -->
+    <div class="plan-card">
+        <h2>Free</h2>
+        <p class="price">₹0 <span>/ forever</span></p>
+
+        <ul>
+            <li>Limited Grammar Topics</li>
+            <li>Basic Verbs Library</li>
+            <li>Limited Practice</li>
+            <li>Ads Supported</li>
+        </ul>
+
+        <button class="btn-outline">
+            Continue Free
+        </button>
+    </div>
+
+    <!-- PRO PLAN -->
+    <div class="plan-card pro">
+        <div class="badge">Most Popular</div>
+
+        <h2>GrammarFlow Pro</h2>
+        <p class="price highlight">
+            ₹299 <span>/ month</span>
+        </p>
+
+        <ul>
+            <li>All 6 Months Structured Course</li>
+            <li>1000+ Advanced Verbs Library</li>
+            <li>Daily Practice & Streak System</li>
+            <li>Level Unlock System</li>
+            <li>Ad-Free Experience</li>
+        </ul>
+
+        <button id="upgradeBtn" class="btn-primary">
+            Get Premium Now
+        </button>
+    </div>
+
+</section>
+
+<script>
+/* ===============================
+   DOM READY
+================================ */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const backBtn = document.getElementById("backBtn");
+    const upgradeBtn = document.getElementById("upgradeBtn");
+
+    /* ===============================
+       BACK BUTTON LOGIC
+    ================================= */
+
+    backBtn.addEventListener("click", function () {
+
+        if (document.referrer !== "") {
+            window.history.back();
+        } else {
+            window.location.href = "index.html";
+        }
+
+    });
+
+    /* ===============================
+       PREMIUM CHECK ON LOAD
+    ================================= */
+
+    const isPremium = localStorage.getItem("premiumUser");
+
+    if (isPremium === "true") {
+        alert("You are already a Premium User.");
+        window.location.href = "index.html";
+    }
+
+    /* ===============================
+       UPGRADE LOGIC
+    ================================= */
+
+    upgradeBtn.addEventListener("click", function () {
+
+        localStorage.setItem("premiumUser", "true");
+
+        alert("Congratulations! You are now Premium.");
+
+        window.location.href = "index.html";
+
+    });
+
+});
+</script>
+
+</body>
+</html>
