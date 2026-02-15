@@ -1,112 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Important Verbs | GrammarFlow</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Important Verbs | GrammarFlow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="resources/CSS/verbs.css">
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+<style>
+
+/* ================= ROOT ================= */
+:root {
+  --bg-main: #F3F5F7;
+  --primary-teal: #0F766E;
+  --light-tint: #E6FFFA;
+  --heading-color: #111827;
+  --text-color: #4B5563;
+  --radius-md: 14px;
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.back-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: none;
+  background: var(--light-tint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-teal);
+  cursor: pointer;
+}
+
+.logo {
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--heading-color);
+}
+
+/* ================= HERO ================= */
+.hero {
+  padding: 16px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.hero h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.hero p {
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+/* ================= CONTROLS ================= */
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.search-box {
+  width: 70%;
+  position: relative;
+}
+
+.filter-container {
+  width: 30%;
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--primary-teal);
+  pointer-events: none;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 10px 10px 32px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(15,118,110,0.4);
+  background: #fff;
+  font-size: 13px;
+  outline: none;
+}
+
+.search-box input:focus {
+  box-shadow: 0 0 0 3px rgba(15,118,110,0.12);
+}
+
+/* ================= TABLE SECTION ================= */
+.verb-section {
+  padding: 8px 10px 14px;
+}
+
+.table-container {
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+/* ================= TABLE ================= */
+.verb-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 12px;
+}
+
+.verb-table thead {
+  background: var(--light-tint);
+  border-bottom: 2px solid var(--primary-teal);
+}
+
+.verb-table th,
+.verb-table td {
+  padding: 6px 4px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.verb-table th {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.verb-table td:last-child {
+  text-align: left;
+  white-space: normal;
+  padding-left: 8px;
+}
+
+.verb-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.verb-table tbody tr:hover {
+  background: var(--light-tint);
+}
+
+/* ================= FILTER ================= */
+.filter-btn {
+  width: 100%;
+  padding: 8px 6px;
+  border-radius: 10px;
+  border: 1.5px solid var(--primary-teal);
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-teal);
+  cursor: pointer;
+}
+
+.filter-menu {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 160px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 4px;
+  display: none;
+  z-index: 100;
+}
+
+.filter-menu.active {
+  display: block;
+}
+
+.filter-item {
+  padding: 8px 10px;
+  font-size: 12.5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.filter-item:hover {
+  background: var(--light-tint);
+}
+
+.filter-item.active {
+  background: var(--primary-teal);
+  color: #fff;
+}
+
+</style>
 </head>
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
 <header class="navbar">
-
-    <button class="back-btn" onclick="history.back()" aria-label="Go Back">
-        <i data-lucide="arrow-left"></i>
-    </button>
-
-    <div class="logo">
-        <i data-lucide="book-open"></i>
-        <span>GrammarFlow</span>
-    </div>
-
+  <button class="back-btn" onclick="history.back()">
+    <i data-lucide="arrow-left"></i>
+  </button>
+  <div class="logo">
+    <i data-lucide="book-open"></i>
+    <span>GrammarFlow</span>
+  </div>
 </header>
 
-
-<!-- ================= HERO ================= -->
 <section class="hero">
-
-    <div class="hero-header">
-        <h1>Important Verbs</h1>
-        <p>V1, V2, V3 with Hindi Meaning</p>
-    </div>
-
-    <!-- ================= CONTROLS ================= -->
-    <div class="controls">
-
-        <!-- Search -->
-        <div class="search-box">
-            <i data-lucide="search" class="input-icon"></i>
-            <input 
-                type="text"
-                id="searchInput"
-                placeholder="Search verb (e.g. go, eat)"
-                autocomplete="off"
-            >
-        </div>
-
-        <!-- Filter -->
-        <div class="filter-container">
-
-            <button class="filter-btn" id="filterBtn" type="button">
-                <i data-lucide="filter"></i>
-                Category
-            </button>
-
-            <div class="filter-menu" id="filterMenu">
-
-                <div class="filter-item" data-value="">All</div>
-                <div class="filter-item" data-value="regular">Regular</div>
-                <div class="filter-item" data-value="irregular">Irregular</div>
-                <div class="filter-item" data-value="daily">Daily</div>
-                <div class="filter-item" data-value="basic">Basic</div>
-                <div class="filter-item" data-value="work">Work</div>
-                <div class="filter-item" data-value="advanced">Advanced</div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+  <div class="hero-header">
+    <h1>Important Verbs</h1>
+    <p>V1, V2, V3 with Hindi Meaning</p>
+  </div>
 </section>
 
-
-<!-- ================= VERB TABLE ================= -->
 <section class="verb-section">
-
-    <div class="table-container">
-
-        <table class="verb-table">
-            <thead>
-                <tr>
-                   <th scope="col">#</th>
-                    <th scope="col">V1</th>
-                    <th scope="col">V2</th>
-                    <th scope="col">V3</th>
-                    <th scope="col">Meaning</th>
-                </tr>
-            </thead>
-
-            <tbody id="verbTableBody">
-                <!-- JS Data Render Here -->
-            </tbody>
-        </table>
-
-    </div>
-
+  <div class="table-container">
+    <table class="verb-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>V1</th>
+          <th>V2</th>
+          <th>V3</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody id="verbTableBody"></tbody>
+    </table>
+  </div>
 </section>
 
-
-<!-- ================= SCRIPT ================= -->
 <script type="module" src="vendors/js/verbsApp.js"></script>
-
 <script>
-    lucide.createIcons();
+lucide.createIcons();
 </script>
 
 </body>
